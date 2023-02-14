@@ -1,0 +1,14 @@
+.idea/
+venv/
+*.pyc
+__pycache__/
+media*/
+docs/docs/site/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+.coverage
+
+.env
