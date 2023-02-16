@@ -32,42 +32,6 @@ services:
       - proxy
     volumes:
       - postgres_data:/var/lib/postgresql/data_atl/
-
-  celery:
-    build: .
-    env_file:
-      - .env
-    command: celery -A ecotextile worker -B -l info
-    restart: always
-    networks:
-      - proxy
-    depends_on:
-      - ecotextile
-      - redis
-
-  redis:
-    hostname: redis
-    restart: always
-    image: redis:alpine
-    networks:
-      - proxy
-    ports:
-      - "6379:6379"
-    expose:
-      - 6378
-
-  nginx:
-    build: ./nginx
-    ports:
-      - 8000:8000
-    volumes:
-      - ./static/:/ecotextile/static/
-      - ./media/:/ecotextile/media/
-    networks:
-      - nginx_network
-    depends_on:
-      - ecotextile
-
 networks:
   proxy:
     driver: bridge
