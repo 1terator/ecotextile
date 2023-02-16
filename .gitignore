@@ -3,6 +3,7 @@ venv/
 *.pyc
 __pycache__/
 media*/
+static*/
 docs/docs/site/
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
