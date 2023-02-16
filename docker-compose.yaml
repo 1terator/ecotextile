@@ -51,9 +51,9 @@ services:
     networks:
       - proxy
     ports:
-      - "6379:6379"
+      - "6378:6378"
     expose:
-      - 6379
+      - 6378
 
   nginx:
     build: ./nginx
