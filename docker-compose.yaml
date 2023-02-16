@@ -4,9 +4,9 @@ services:
   ecotextile:
     build: ./
     ports:
-      - 8000:8000
+      - 7654:7654
     expose:
-      - 8000
+      - 7654
     env_file:
       - .env
     networks:
@@ -58,7 +58,7 @@ services:
     ports:
       - "6379:6379"
     expose:
-      - 6378
+      - 6379
 
   nginx:
     build: ./nginx
