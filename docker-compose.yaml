@@ -63,7 +63,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 1337:80
+      - 80:80
     volumes:
       - ./static/:/ecotextile/static/
       - ./media/:/ecotextile/media/
