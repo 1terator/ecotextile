@@ -20,13 +20,16 @@ from django.urls import path, include
 from rest_framework import routers
 
 from document.views import DocumentViewSet
+from item.views import ItemViewSet
 
 router = routers.DefaultRouter()
 router.register("documents", DocumentViewSet)
+router.register("items", ItemViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("v1/", include(router.urls)),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
