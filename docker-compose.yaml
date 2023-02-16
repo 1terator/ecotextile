@@ -45,16 +45,6 @@ services:
       - ecotextile
       - redis
 
-  redis:
-    hostname: redis
-    image: redis:alpine
-    networks:
-      - proxy
-    ports:
-      - "6378:6378"
-    expose:
-      - 6378
-
   nginx:
     build: ./nginx
     ports:
