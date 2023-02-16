@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_celery_beat",
     "rest_framework_simplejwt",
+    "corsheaders",
     "user",
     "document",
     "item",
@@ -57,6 +58,8 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
