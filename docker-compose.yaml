@@ -52,7 +52,9 @@ services:
       - proxy
     ports:
       - "6379:6379"
-    command: redis-server
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - cache:/data
     expose:
       - 6378
 
@@ -76,3 +78,5 @@ networks:
 
 volumes:
   postgres_data:
+  cache:
+    driver: local
