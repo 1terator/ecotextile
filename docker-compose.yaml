@@ -3,6 +3,8 @@ version: '3.3'
 services:
   ecotextile:
     build: ./
+    ports:
+      - 8000:8000
     env_file:
       - .env
     networks:
@@ -59,7 +61,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 80:80
+      - 8080:8080
     volumes:
       - ./static/:/ecotextile/static/
       - ./media/:/ecotextile/media/
