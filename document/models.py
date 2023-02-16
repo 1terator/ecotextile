@@ -6,7 +6,7 @@ class Document(models.Model):
         ordering = ['uploaded_at']
 
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(blank=False, null=False)
+    file = models.FileField(blank=False, null=False, upload_to='documents/%Y/%m/')
     remark = models.CharField(max_length=200, blank=True, null=True)
 
     is_visible = models.BooleanField(default=True)

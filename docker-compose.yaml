@@ -1,20 +1,21 @@
 version: '3.8'
 
 services:
-  ecotextile_api:
+  ecotextile:
     build: ./
     env_file:
       - .env
     networks:
       - proxy
+      - nginx_network
     command: /bin/sh -c "./script.sh"
     volumes:
-      - .:/app
+      - ./:/ecotextile/
+      - ./static/:/ecotextile/static/
+      - ./media/:/ecotextile/media/
     depends_on:
       - db
       - redis
-    ports:
-      - "8000:8000"
   db:
     image: postgres:13.6-alpine
     env_file:
@@ -41,7 +42,7 @@ services:
     networks:
       - proxy
     depends_on:
-      - ecotextile_api
+      - ecotextile
       - redis
 
   redis:
@@ -53,6 +54,18 @@ services:
       - "6379:6379"
     expose:
       - 6379
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 8000:8000
+    volumes:
+      - ./static/:/ecotextile/static/
+      - ./media/:/ecotextile/media/
+    networks:
+      - nginx_network
+    depends_on:
+      - ecotextile
 
 networks:
   proxy:
