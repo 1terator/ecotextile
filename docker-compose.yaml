@@ -47,6 +47,7 @@ services:
 
   redis:
     hostname: redis
+    restart: always
     image: redis:alpine
     networks:
       - proxy

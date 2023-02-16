@@ -138,8 +138,8 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Set celery settings
-broker_url = "redis://0.0.0.0:6379"
-result_backend = "redis://0.0.0.0:6379"
+broker_url = "redis://127.0.0.1:6379"
+result_backend = "redis://127.0.0.1:6379"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
