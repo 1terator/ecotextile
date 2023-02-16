@@ -5,6 +5,8 @@ services:
     build: ./
     ports:
       - 8000:8000
+    expose:
+      - 8000
     env_file:
       - .env
     networks:
@@ -61,7 +63,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 1369:80
+      - 1337:80
     volumes:
       - ./static/:/ecotextile/static/
       - ./media/:/ecotextile/media/
