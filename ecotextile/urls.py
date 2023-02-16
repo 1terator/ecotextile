@@ -20,7 +20,7 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from auth.views import MyObtainTokenPairView, RegisterView
+from user.views import MyObtainTokenPairView, RegisterView
 from document.views import DocumentViewSet
 from item.views import ItemViewSet
 

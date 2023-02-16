@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_celery_beat",
     "rest_framework_simplejwt",
-    "auth",
+    "user",
     "document",
     "item",
 ]
