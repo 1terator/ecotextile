@@ -59,7 +59,6 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -155,5 +154,12 @@ result_backend = "redis://redis:6379/0"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://ecotextile.by",
+    "http://localhost:8080",
+]
+CORS_ALLOW_HEADERS = (
+    'content-disposition', 'accept-encoding',
+    'content-type', 'accept', 'origin', 'Authorization',
+    'access-control-allow-methods'
+)
