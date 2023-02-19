@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
 from user.views import MyObtainTokenPairView, RegisterView
 from document.views import DocumentViewSet
@@ -33,6 +33,7 @@ urlpatterns = [
     path("v1/", include(router.urls)),
     path('auth/login/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
     path('auth/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('auth/register/', RegisterView.as_view(), name='auth_register'),
 ]
 
