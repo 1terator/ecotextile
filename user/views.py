@@ -18,7 +18,7 @@ class MyObtainTokenPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-class RegisterView(mixins.CreateModelMixin, generics.GenericAPIView):
+class RegisterView(mixins.CreateModelMixin, GenericViewSet):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
