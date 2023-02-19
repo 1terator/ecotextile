@@ -20,13 +20,14 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
-from user.views import MyObtainTokenPairView, RegisterView
+from user.views import MyObtainTokenPairView, RegisterView, UserViewSet
 from document.views import DocumentViewSet
 from item.views import ItemViewSet
 
 router = routers.DefaultRouter()
 router.register("documents", DocumentViewSet)
 router.register("items", ItemViewSet)
+router.register("users", UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
