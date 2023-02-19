@@ -3,6 +3,7 @@ from rest_framework import generics, mixins
 from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
 from .permissions import IsCurrentUser
 from .serializers import MyTokenObtainPairSerializer, RegisterSerializer, MiniUserSerializer
@@ -23,7 +24,7 @@ class RegisterView(mixins.CreateModelMixin, generics.GenericAPIView):
     serializer_class = RegisterSerializer
 
 
-class UserViewSet(generics.GenericAPIView):
+class UserViewSet(GenericViewSet):
     queryset = User.objects.all()
     permission_classes = (AllowAny, )
     serializer_class = MiniUserSerializer
