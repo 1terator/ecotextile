@@ -30,12 +30,12 @@ router.register("items", ItemViewSet)
 router.register("users", UserViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('v1/admin/', admin.site.urls),
     path("v1/", include(router.urls)),
-    path('auth/login/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
-    path('auth/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('auth/register/', RegisterView.as_view(), name='auth_register'),
+    path('v1/auth/login/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
+    path('v1/auth/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('v1/auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('v1/auth/register/', RegisterView.as_view(), name='auth_register'),
 ]
 
 if settings.DEBUG:

@@ -14,9 +14,9 @@ services:
       - nginx_network
     command: /bin/sh -c "./script.sh"
     volumes:
-      - ./:/ecotextile/
       - ./static/:/ecotextile/static/
       - ./media/:/ecotextile/media/
+      - ./dist/:/ecotextile/dist/
     depends_on:
       - db
       - redis
@@ -67,6 +67,7 @@ services:
     volumes:
       - ./static/:/ecotextile/static/
       - ./media/:/ecotextile/media/
+      - ./dist/:/ecotextile/dist/
     networks:
       - nginx_network
     depends_on:
