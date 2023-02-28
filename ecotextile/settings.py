@@ -156,7 +156,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "https://ecotextile.by",
-    "http://localhost:8080",
+    "https://localhost",
+    "https://178.172.235.157"
 ]
 CORS_ALLOW_HEADERS = (
     'content-disposition', 'accept-encoding',
