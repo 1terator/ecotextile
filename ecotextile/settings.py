@@ -154,10 +154,15 @@ result_backend = "redis://redis:6379/0"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     "https://ecotextile.by",
     "https://localhost:8080",
-    "https://178.172.235.157"
+    "https://178.172.235.157",
+    "https://localhost",
+    "https://127.0.0.1",
 ]
 CORS_ALLOW_HEADERS = (
     'content-disposition', 'accept-encoding',
